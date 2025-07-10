@@ -10,7 +10,7 @@ from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 import mlflow
 import os
 
-mlflow.set_tracking_uri("http://localhost:8080")
+mlflow.set_tracking_uri("http://0.0.0.0:5000")
 mlflow.set_experiment("Tourism-Package-Prediction-Experiment")
 
 # Hugging Face API authentication
@@ -73,6 +73,7 @@ model_pipeline = make_pipeline(preprocessor, xgb_model)
 
 # Start MLflow run
 with mlflow.start_run():
+    mlflow.set_tag("run_id", "run_id")
     # Hyperparameter tuning with GridSearchCV
     grid_search = GridSearchCV(model_pipeline, param_grid, cv=5, n_jobs=-1)
     grid_search.fit(Xtrain, ytrain)
