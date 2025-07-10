@@ -4,6 +4,7 @@ from sklearn.pipeline import make_pipeline
 import xgboost as xgb
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 import joblib
 from huggingface_hub import login, HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
