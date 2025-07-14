@@ -1,8 +1,8 @@
+# for creating a folder
+import os
 # for data manipulation
 import pandas as pd
 import sklearn
-# for creating a folder
-import os
 # for data preprocessing and pipeline creation
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
